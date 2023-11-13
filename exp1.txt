@@ -1,0 +1,107 @@
+$bit stuffing
+#include<stdio.h>
+#include<stdlib.h>
+void bit_stuffing(int n,int a[])
+{
+int b[20],i=0,j=0,k;
+while(i<n)
+{
+if(a[i]==1)
+{
+int count=1;
+b[j]=a[i];
+for(k=i+1;a[k]==1 && k<n && count<5;k++)
+{
+j++;
+b[j]=a[k];
+count++;
+if(count==5)
+
+{
+j++;
+b[j]=0;
+}
+i=k;
+}
+}
+else{
+b[j]=a[i];
+}
+i++;
+j++;
+}
+for(i=0;i<j;i++)
+{
+printf("%d",b[i]);
+}
+}
+int main()
+{
+int n=6;
+int a[]={1,1,1,1,1,1};
+bit_stuffing(n,a);
+return 0;
+}
+
+
+output:
+
+1111101
+$bit destuffing
+
+#include <stdio.h> 
+#include <string.h> 
+void bitDestuffing(int N, int arr[]) 
+{   
+    int brr[30]; 
+    int i, j, k; 
+    i = 0; 
+    j = 0; 
+    int count = 1; 
+    while (i < N) { 
+        if (arr[i] == 1) { 
+            brr[j] = arr[i]; 
+            for (k = i + 1; 
+                arr[k] == 1 
+                && k < N 
+                && count < 5; 
+                k++) { 
+                j++; 
+                brr[j] = arr[k]; 
+                count++; 
+                if (count == 5) { 
+                    k++;                 } 
+                i = k;             }         } 
+        else { 
+            brr[j] = arr[i]; 
+        } 
+        i++; 
+        j++; 
+    } 
+ 
+        printf("After Bit De-Stuffing : "); 
+        for (i = 0; i < j; i++) 
+ 
+ 
+ 
+                 Computer Networks LAB        Dept. of CSE                               9      S.R.K.R Engineering College, Bhimavaram, AP, INDIA 
+ 
+        printf("%d", brr[i]); 
+    printf("\n");        } 
+int main() 
+{ 
+    int N,i,arr[30]; 
+    printf("Enter size : "); 
+    scanf("%d",&N); 
+    printf("Enter input : "); 
+    for(i=0;i<N;i++) 
+    { 
+        scanf("%d",&arr[i]); 
+    } 
+    bitDestuffing(N, arr); 
+    return 0;    }
+
+
+
+
+
