@@ -16,7 +16,6 @@ j++;
 b[j]=a[k];
 count++;
 if(count==5)
-
 {
 j++;
 b[j]=0;
@@ -80,11 +79,7 @@ void bitDestuffing(int N, int arr[])
     } 
  
         printf("After Bit De-Stuffing : "); 
-        for (i = 0; i < j; i++) 
- 
- 
- 
-                 Computer Networks LAB        Dept. of CSE                               9      S.R.K.R Engineering College, Bhimavaram, AP, INDIA 
+        for (i = 0; i < j; i++)
  
         printf("%d", brr[i]); 
     printf("\n");        } 
@@ -100,8 +95,3 @@ int main()
     } 
     bitDestuffing(N, arr); 
     return 0;    }
-
-
-
-
-
