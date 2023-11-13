@@ -1,0 +1,28 @@
+#include<stdio.h>
+#include<string.h>
+void cstuff(char* originaldata,char* stuffeddata,char startchar,char endchar,char escapechar)
+{
+int originallen=strlen(originaldata);
+int stuffedlen=0;
+for(int i=0;i<originallen;i++)
+{
+if(originaldata[i]==startchar || originaldata[i]==endchar || originaldata[i]==escapechar)
+{
+stuffeddata[stuffedlen++]=escapechar;
+}
+stuffeddata[stuffedlen++]=originaldata[i];
+}
+stuffeddata[stuffedlen]='\0';
+}
+int main()
+{
+char originaldata[100]="hello world";
+char stuffeddata[200];
+char startchar='o';
+char endchar='h';
+char escapechar='@';
+printf("originaldata:%s\n",originaldata);
+cstuff(originaldata,stuffeddata,startchar,endchar,escapechar);
+printf("stuffed data :%s\n",stuffeddata);
+return 0;
+}
